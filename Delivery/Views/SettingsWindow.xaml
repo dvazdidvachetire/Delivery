@@ -1,0 +1,32 @@
+﻿<UserControl x:Class="Delivery.Views.SettingsWindow"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:prism="http://prismlibrary.com/"
+             xmlns:local="clr-namespace:Delivery.Views"
+             Width="400"
+             Height="150"
+             mc:Ignorable="d">
+    <prism:Dialog.WindowStyle>
+        <Style TargetType="Window">
+            <Setter Property="prism:Dialog.WindowStartupLocation" Value="CenterScreen" />
+            <Setter Property="ResizeMode" Value="NoResize"/>
+            <Setter Property="ShowInTaskbar" Value="True"/>
+            <Setter Property="SizeToContent" Value="WidthAndHeight"/>
+            <Setter Property="WindowStyle" Value="ToolWindow"/>
+            <Setter Property="Title" Value="{Binding Title, FallbackValue=Настройки}"/>
+        </Style>
+    </prism:Dialog.WindowStyle>
+    <Grid Background="WhiteSmoke">
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <StackPanel Margin="10">
+            <Label Content="Строка соединения с БД:" Padding="0,5"/>
+            <TextBox Height="25" VerticalContentAlignment="Center"/>
+        </StackPanel>
+        <Button Grid.Row="1" Content="OK" Height="25" Width="100" Margin="10"/>
+    </Grid>
+</UserControl>
